@@ -1,0 +1,25 @@
+# Vivado
+prj/
+
+
+# Simulation temporary files
+work/
+transcript
+vsim.wlf
+*.vcd
+*.fst
+
+
+
+# Editor
+.vscode/
+*.code-workspace
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary
+*.tmp
+*.bak
