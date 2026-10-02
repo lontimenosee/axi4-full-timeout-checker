@@ -1,26 +1,29 @@
 ﻿Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
-Start time: 11:46:28 on Oct 02,2026
-vlog -sv -L uvm -work work "+incdir+D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm" D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm\axi_timeout_if.sv D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm\axi_timeout_pkg.sv D:\GIT\MyPrj\axi4-full-timeout-checker\rtl\axi4_timeout_checker.v D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm\tb_axi4_timeout_uvm.sv 
+Start time: 11:59:30 on Oct 02,2026
+vlog -sv "+cover=sbt" -L uvm -work work "+incdir+D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm" D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm\axi_timeout_if.sv D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm\axi_timeout_pkg.sv D:\GIT\MyPrj\axi4-full-timeout-checker\rtl\axi4_timeout_checker.v D:\GIT\MyPrj\axi4-full-timeout-checker\tb\sva\axi4_timeout_checker_sva.sv D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm\tb_axi4_timeout_uvm.sv
 -- Compiling interface axi_timeout_if
 -- Compiling package axi_timeout_pkg
 -- Importing package uvm.uvm_pkg (uvm-1.2 Built-in)
 ** Note: (vlog-2286) D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm\axi_timeout_pkg.sv(2): Using implicit +incdir+D:/FPGA/Modelsim/uvm-1.2/../verilog_src/uvm-1.2/src from import uvm_pkg
 -- Compiling module axi4_timeout_checker
+-- Compiling module axi4_timeout_checker_sva
+-- Compiling package axi4_timeout_checker_sva_sv_unit
 -- Compiling module tb_axi4_timeout_uvm
 -- Importing package axi_timeout_pkg
 
 Top level modules:
 	tb_axi4_timeout_uvm
-End time: 11:46:28 on Oct 02,2026, Elapsed time: 0:00:00
-Errors: 0, Warnings: 0
+** Warning: (vlog-2650) 'bind' found in compilation unit scope. Please use -cuname to ensure that 'bind' gets elaborated.
+End time: 11:59:30 on Oct 02,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 1
 ===== axi_timeout_smoke_test =====
 Reading pref.tcl
 
 # 2020.4
 
-# vsim -c -L uvm work.tb_axi4_timeout_uvm "+UVM_TESTNAME=axi_timeout_smoke_test" -do "run -all; quit -code 0" 
-# Start time: 11:46:29 on Oct 02,2026
-# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_6216\win64_gcc-13.1.0\export_tramp.dll
+# vsim -coverage -onfinish stop -c -L uvm work.tb_axi4_timeout_uvm "+UVM_TESTNAME=axi_timeout_smoke_test" -do "run -all; coverage save axi_timeout_smoke_test.ucdb; quit -code 0"
+# Start time: 11:59:31 on Oct 02,2026
+# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_50172\win64_gcc-13.1.0\export_tramp.dll
 # ** Note: (vsim-3812) Design is being optimized...
 # //  ModelSim SE-64 2020.4 Oct 13 2020
 # //
@@ -41,8 +44,8 @@ Reading pref.tcl
 # Loading work.axi_timeout_pkg(fast)
 # Loading uvm.questa_uvm_pkg(fast)
 # Loading work.tb_axi4_timeout_uvm(fast)
-# Compiling C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_6216\win64_gcc-13.1.0\exportwrapper.c
-# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_6216\win64_gcc-13.1.0\vsim_auto_compile.dll
+# Compiling C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_50172\win64_gcc-13.1.0\exportwrapper.c
+# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_50172\win64_gcc-13.1.0\vsim_auto_compile.dll
 # Loading D:/FPGA/Modelsim/uvm-1.2\win64\uvm_dpi.dll
 # run -all
 # UVM_INFO verilog_src/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
@@ -71,16 +74,18 @@ Reading pref.tcl
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # UVM_INFO @ 0: reporter [RNTST] Running test axi_timeout_smoke_test...
 # UVM_INFO verilog_src/uvm-1.2/src/base/uvm_objection.svh(1270) @ 560000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm/axi_timeout_coverage.sv(24) @ 560000: uvm_test_top.env.cov [COVERAGE] functional coverage = 92.31%
 # UVM_INFO D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm/axi_timeout_scoreboard.sv(45) @ 560000: uvm_test_top.env.sb [M4_PASS] scoreboard checked 56 cycles
 # UVM_INFO verilog_src/uvm-1.2/src/base/uvm_report_server.svh(847) @ 560000: reporter [UVM/REPORT/SERVER] 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :    6
+# UVM_INFO :    7
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
+# [COVERAGE]     1
 # [M4_PASS]     1
 # [Questa UVM]     2
 # [RNTST]     1
@@ -89,16 +94,20 @@ Reading pref.tcl
 # 
 # ** Note: $finish    : D:/FPGA/Modelsim/win64/../verilog_src/uvm-1.2/src/base/uvm_root.svh(517)
 #    Time: 560 ns  Iteration: 68  Instance: /tb_axi4_timeout_uvm
-# End time: 11:46:34 on Oct 02,2026, Elapsed time: 0:00:05
+# Break in Task uvm_pkg/uvm_root::run_test at D:/FPGA/Modelsim/win64/../verilog_src/uvm-1.2/src/base/uvm_root.svh line 517
+# Stopped at D:/FPGA/Modelsim/win64/../verilog_src/uvm-1.2/src/base/uvm_root.svh line 517
+#  coverage save axi_timeout_smoke_test.ucdb
+#  quit -code 0
+# End time: 11:59:35 on Oct 02,2026, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 0
 ===== axi_timeout_boundary_test =====
 Reading pref.tcl
 
 # 2020.4
 
-# vsim -c -L uvm work.tb_axi4_timeout_uvm "+UVM_TESTNAME=axi_timeout_boundary_test" -do "run -all; quit -code 0" 
-# Start time: 11:46:35 on Oct 02,2026
-# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_45604\win64_gcc-13.1.0\export_tramp.dll
+# vsim -coverage -onfinish stop -c -L uvm work.tb_axi4_timeout_uvm "+UVM_TESTNAME=axi_timeout_boundary_test" -do "run -all; coverage save axi_timeout_boundary_test.ucdb; quit -code 0"
+# Start time: 11:59:36 on Oct 02,2026
+# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_61040\win64_gcc-13.1.0\export_tramp.dll
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  ModelSim SE-64 2020.4 Oct 13 2020
 # //
@@ -119,8 +128,8 @@ Reading pref.tcl
 # Loading work.axi_timeout_pkg(fast)
 # Loading uvm.questa_uvm_pkg(fast)
 # Loading work.tb_axi4_timeout_uvm(fast)
-# Compiling C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_45604\win64_gcc-13.1.0\exportwrapper.c
-# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_45604\win64_gcc-13.1.0\vsim_auto_compile.dll
+# Compiling C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_61040\win64_gcc-13.1.0\exportwrapper.c
+# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_61040\win64_gcc-13.1.0\vsim_auto_compile.dll
 # Loading D:/FPGA/Modelsim/uvm-1.2\win64\uvm_dpi.dll
 # run -all
 # UVM_INFO verilog_src/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
@@ -149,16 +158,18 @@ Reading pref.tcl
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # UVM_INFO @ 0: reporter [RNTST] Running test axi_timeout_boundary_test...
 # UVM_INFO verilog_src/uvm-1.2/src/base/uvm_objection.svh(1270) @ 360000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm/axi_timeout_coverage.sv(24) @ 360000: uvm_test_top.env.cov [COVERAGE] functional coverage = 50.00%
 # UVM_INFO D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm/axi_timeout_scoreboard.sv(45) @ 360000: uvm_test_top.env.sb [M4_PASS] scoreboard checked 36 cycles
 # UVM_INFO verilog_src/uvm-1.2/src/base/uvm_report_server.svh(847) @ 360000: reporter [UVM/REPORT/SERVER] 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :    6
+# UVM_INFO :    7
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
+# [COVERAGE]     1
 # [M4_PASS]     1
 # [Questa UVM]     2
 # [RNTST]     1
@@ -167,16 +178,20 @@ Reading pref.tcl
 # 
 # ** Note: $finish    : D:/FPGA/Modelsim/win64/../verilog_src/uvm-1.2/src/base/uvm_root.svh(517)
 #    Time: 360 ns  Iteration: 68  Instance: /tb_axi4_timeout_uvm
-# End time: 11:46:37 on Oct 02,2026, Elapsed time: 0:00:02
+# Break in Task uvm_pkg/uvm_root::run_test at D:/FPGA/Modelsim/win64/../verilog_src/uvm-1.2/src/base/uvm_root.svh line 517
+# Stopped at D:/FPGA/Modelsim/win64/../verilog_src/uvm-1.2/src/base/uvm_root.svh line 517
+#  coverage save axi_timeout_boundary_test.ucdb
+#  quit -code 0
+# End time: 11:59:39 on Oct 02,2026, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 0
 ===== axi_timeout_recovery_test =====
 Reading pref.tcl
 
 # 2020.4
 
-# vsim -c -L uvm work.tb_axi4_timeout_uvm "+UVM_TESTNAME=axi_timeout_recovery_test" -do "run -all; quit -code 0" 
-# Start time: 11:46:38 on Oct 02,2026
-# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_58548\win64_gcc-13.1.0\export_tramp.dll
+# vsim -coverage -onfinish stop -c -L uvm work.tb_axi4_timeout_uvm "+UVM_TESTNAME=axi_timeout_recovery_test" -do "run -all; coverage save axi_timeout_recovery_test.ucdb; quit -code 0"
+# Start time: 11:59:40 on Oct 02,2026
+# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_34380\win64_gcc-13.1.0\export_tramp.dll
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  ModelSim SE-64 2020.4 Oct 13 2020
 # //
@@ -197,8 +212,8 @@ Reading pref.tcl
 # Loading work.axi_timeout_pkg(fast)
 # Loading uvm.questa_uvm_pkg(fast)
 # Loading work.tb_axi4_timeout_uvm(fast)
-# Compiling C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_58548\win64_gcc-13.1.0\exportwrapper.c
-# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_58548\win64_gcc-13.1.0\vsim_auto_compile.dll
+# Compiling C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_34380\win64_gcc-13.1.0\exportwrapper.c
+# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_34380\win64_gcc-13.1.0\vsim_auto_compile.dll
 # Loading D:/FPGA/Modelsim/uvm-1.2\win64\uvm_dpi.dll
 # run -all
 # UVM_INFO verilog_src/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
@@ -227,16 +242,18 @@ Reading pref.tcl
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # UVM_INFO @ 0: reporter [RNTST] Running test axi_timeout_recovery_test...
 # UVM_INFO verilog_src/uvm-1.2/src/base/uvm_objection.svh(1270) @ 260000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm/axi_timeout_coverage.sv(24) @ 260000: uvm_test_top.env.cov [COVERAGE] functional coverage = 53.85%
 # UVM_INFO D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm/axi_timeout_scoreboard.sv(45) @ 260000: uvm_test_top.env.sb [M4_PASS] scoreboard checked 26 cycles
 # UVM_INFO verilog_src/uvm-1.2/src/base/uvm_report_server.svh(847) @ 260000: reporter [UVM/REPORT/SERVER] 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :    6
+# UVM_INFO :    7
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
+# [COVERAGE]     1
 # [M4_PASS]     1
 # [Questa UVM]     2
 # [RNTST]     1
@@ -245,16 +262,20 @@ Reading pref.tcl
 # 
 # ** Note: $finish    : D:/FPGA/Modelsim/win64/../verilog_src/uvm-1.2/src/base/uvm_root.svh(517)
 #    Time: 260 ns  Iteration: 68  Instance: /tb_axi4_timeout_uvm
-# End time: 11:46:39 on Oct 02,2026, Elapsed time: 0:00:01
+# Break in Task uvm_pkg/uvm_root::run_test at D:/FPGA/Modelsim/win64/../verilog_src/uvm-1.2/src/base/uvm_root.svh line 517
+# Stopped at D:/FPGA/Modelsim/win64/../verilog_src/uvm-1.2/src/base/uvm_root.svh line 517
+#  coverage save axi_timeout_recovery_test.ucdb
+#  quit -code 0
+# End time: 11:59:43 on Oct 02,2026, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 0
 ===== axi_timeout_parallel_reset_test =====
 Reading pref.tcl
 
 # 2020.4
 
-# vsim -c -L uvm work.tb_axi4_timeout_uvm "+UVM_TESTNAME=axi_timeout_parallel_reset_test" -do "run -all; quit -code 0" 
-# Start time: 11:46:41 on Oct 02,2026
-# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_54980\win64_gcc-13.1.0\export_tramp.dll
+# vsim -coverage -onfinish stop -c -L uvm work.tb_axi4_timeout_uvm "+UVM_TESTNAME=axi_timeout_parallel_reset_test" -do "run -all; coverage save axi_timeout_parallel_reset_test.ucdb; quit -code 0"
+# Start time: 11:59:44 on Oct 02,2026
+# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_2932\win64_gcc-13.1.0\export_tramp.dll
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  ModelSim SE-64 2020.4 Oct 13 2020
 # //
@@ -275,8 +296,8 @@ Reading pref.tcl
 # Loading work.axi_timeout_pkg(fast)
 # Loading uvm.questa_uvm_pkg(fast)
 # Loading work.tb_axi4_timeout_uvm(fast)
-# Compiling C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_54980\win64_gcc-13.1.0\exportwrapper.c
-# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_54980\win64_gcc-13.1.0\vsim_auto_compile.dll
+# Compiling C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_2932\win64_gcc-13.1.0\exportwrapper.c
+# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_2932\win64_gcc-13.1.0\vsim_auto_compile.dll
 # Loading D:/FPGA/Modelsim/uvm-1.2\win64\uvm_dpi.dll
 # run -all
 # UVM_INFO verilog_src/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
@@ -305,16 +326,18 @@ Reading pref.tcl
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # UVM_INFO @ 0: reporter [RNTST] Running test axi_timeout_parallel_reset_test...
 # UVM_INFO verilog_src/uvm-1.2/src/base/uvm_objection.svh(1270) @ 190000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm/axi_timeout_coverage.sv(24) @ 190000: uvm_test_top.env.cov [COVERAGE] functional coverage = 65.38%
 # UVM_INFO D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm/axi_timeout_scoreboard.sv(45) @ 190000: uvm_test_top.env.sb [M4_PASS] scoreboard checked 19 cycles
 # UVM_INFO verilog_src/uvm-1.2/src/base/uvm_report_server.svh(847) @ 190000: reporter [UVM/REPORT/SERVER] 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :    6
+# UVM_INFO :    7
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
+# [COVERAGE]     1
 # [M4_PASS]     1
 # [Questa UVM]     2
 # [RNTST]     1
@@ -323,6 +346,10 @@ Reading pref.tcl
 # 
 # ** Note: $finish    : D:/FPGA/Modelsim/win64/../verilog_src/uvm-1.2/src/base/uvm_root.svh(517)
 #    Time: 190 ns  Iteration: 68  Instance: /tb_axi4_timeout_uvm
-# End time: 11:46:42 on Oct 02,2026, Elapsed time: 0:00:01
+# Break in Task uvm_pkg/uvm_root::run_test at D:/FPGA/Modelsim/win64/../verilog_src/uvm-1.2/src/base/uvm_root.svh line 517
+# Stopped at D:/FPGA/Modelsim/win64/../verilog_src/uvm-1.2/src/base/uvm_root.svh line 517
+#  coverage save axi_timeout_parallel_reset_test.ucdb
+#  quit -code 0
+# End time: 11:59:46 on Oct 02,2026, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
 [PASS] M4 UVM regression completed successfully.

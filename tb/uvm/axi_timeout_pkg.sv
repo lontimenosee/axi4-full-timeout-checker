@@ -5,6 +5,7 @@ package axi_timeout_pkg;
  `include "axi_timeout_driver.sv"
  `include "axi_timeout_monitor.sv"
  `include "axi_timeout_scoreboard.sv"
+ `include "axi_timeout_coverage.sv"
  `include "axi_timeout_agent.sv"
  `include "axi_timeout_env.sv"
  `include "axi_timeout_sequences.sv"

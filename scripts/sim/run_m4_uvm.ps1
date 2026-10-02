@@ -6,11 +6,11 @@ $all=@(); Push-Location $work
 try{
  & vlib work | Out-Null
  $inc="+incdir+$root\tb\uvm"
- $compile=& vlog -sv -L uvm -work work $inc "$root\tb\uvm\axi_timeout_if.sv" "$root\tb\uvm\axi_timeout_pkg.sv" "$root\rtl\axi4_timeout_checker.v" "$root\tb\uvm\tb_axi4_timeout_uvm.sv" 2>&1
+ $compile=& vlog -sv +cover=sbt -L uvm -work work $inc "$root\tb\uvm\axi_timeout_if.sv" "$root\tb\uvm\axi_timeout_pkg.sv" "$root\rtl\axi4_timeout_checker.v" "$root\tb\sva\axi4_timeout_checker_sva.sv" "$root\tb\uvm\tb_axi4_timeout_uvm.sv" 2>&1
  $all+=$compile; if($LASTEXITCODE-ne 0){$all|Set-Content $log -Encoding utf8;$all|Out-Host;exit 1}
  $tests=@('axi_timeout_smoke_test','axi_timeout_boundary_test','axi_timeout_recovery_test','axi_timeout_parallel_reset_test')
  foreach($test in $tests){
-  $out=& vsim -c -L uvm work.tb_axi4_timeout_uvm "+UVM_TESTNAME=$test" -do 'run -all; quit -code 0' 2>&1
+  $out=& vsim -coverage -onfinish stop -c -L uvm work.tb_axi4_timeout_uvm "+UVM_TESTNAME=$test" -do "run -all; coverage save $test.ucdb; quit -code 0" 2>&1
   $all+="===== $test =====";$all+=$out
   $text=$out-join"`n"
   if($text-notmatch 'M4_PASS' -or $text-notmatch 'UVM_ERROR\s*:\s*0' -or $text-notmatch 'UVM_FATAL\s*:\s*0'){$all|Set-Content $log -Encoding utf8;$all|Out-Host;exit 1}
