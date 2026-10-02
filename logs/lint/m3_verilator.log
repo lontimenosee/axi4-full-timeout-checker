@@ -1,13 +1,13 @@
 ﻿============================================================
 M3 Verilator RTL Lint
-Time: 2026-10-02 11:16:37
+Time: 2026-10-02 11:46:54
 Tool: Verilator 5.050 2026-07-01 rev vUNKNOWN-built20260702
 Command: verilator --lint-only --Wall --top-module axi4_timeout_checker D:\GIT\MyPrj\axi4-full-timeout-checker\rtl\axi4_timeout_checker.v
 ============================================================
 
 - V e r i l a t i o n   R e p o r t: Verilator 5.050 2026-07-01 rev vUNKNOWN-built20260702
 - Verilator: Built from 0.041 MB sources in 2 modules, into 0.021 MB in 3 C++ files needing 0.000 MB
-- Verilator: Walltime 0.010 s (elab=0.001, cvt=0.003, bld=0.000); cpu 0.000 s on 1 threads; allocated 15.262 MB
+- Verilator: Walltime 0.013 s (elab=0.001, cvt=0.004, bld=0.000); cpu 0.000 s on 1 threads; allocated 15.273 MB
 
 ============================================================
 Exit code: 0

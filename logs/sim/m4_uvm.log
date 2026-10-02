@@ -1,0 +1,328 @@
+﻿Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+Start time: 11:46:28 on Oct 02,2026
+vlog -sv -L uvm -work work "+incdir+D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm" D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm\axi_timeout_if.sv D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm\axi_timeout_pkg.sv D:\GIT\MyPrj\axi4-full-timeout-checker\rtl\axi4_timeout_checker.v D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm\tb_axi4_timeout_uvm.sv 
+-- Compiling interface axi_timeout_if
+-- Compiling package axi_timeout_pkg
+-- Importing package uvm.uvm_pkg (uvm-1.2 Built-in)
+** Note: (vlog-2286) D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm\axi_timeout_pkg.sv(2): Using implicit +incdir+D:/FPGA/Modelsim/uvm-1.2/../verilog_src/uvm-1.2/src from import uvm_pkg
+-- Compiling module axi4_timeout_checker
+-- Compiling module tb_axi4_timeout_uvm
+-- Importing package axi_timeout_pkg
+
+Top level modules:
+	tb_axi4_timeout_uvm
+End time: 11:46:28 on Oct 02,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+===== axi_timeout_smoke_test =====
+Reading pref.tcl
+
+# 2020.4
+
+# vsim -c -L uvm work.tb_axi4_timeout_uvm "+UVM_TESTNAME=axi_timeout_smoke_test" -do "run -all; quit -code 0" 
+# Start time: 11:46:29 on Oct 02,2026
+# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_6216\win64_gcc-13.1.0\export_tramp.dll
+# ** Note: (vsim-3812) Design is being optimized...
+# //  ModelSim SE-64 2020.4 Oct 13 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.axi_timeout_if(fast)
+# Loading uvm.uvm_pkg(fast)
+# Loading work.axi_timeout_pkg(fast)
+# Loading uvm.questa_uvm_pkg(fast)
+# Loading work.tb_axi4_timeout_uvm(fast)
+# Compiling C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_6216\win64_gcc-13.1.0\exportwrapper.c
+# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_6216\win64_gcc-13.1.0\vsim_auto_compile.dll
+# Loading D:/FPGA/Modelsim/uvm-1.2\win64\uvm_dpi.dll
+# run -all
+# UVM_INFO verilog_src/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
+# ----------------------------------------------------------------
+# UVM-1.2
+# (C) 2007-2014 Mentor Graphics Corporation
+# (C) 2007-2014 Cadence Design Systems, Inc.
+# (C) 2006-2014 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# (C) 2013-2014 NVIDIA Corporation
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test axi_timeout_smoke_test...
+# UVM_INFO verilog_src/uvm-1.2/src/base/uvm_objection.svh(1270) @ 560000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm/axi_timeout_scoreboard.sv(45) @ 560000: uvm_test_top.env.sb [M4_PASS] scoreboard checked 56 cycles
+# UVM_INFO verilog_src/uvm-1.2/src/base/uvm_report_server.svh(847) @ 560000: reporter [UVM/REPORT/SERVER] 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    6
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [M4_PASS]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVM/RELNOTES]     1
+# 
+# ** Note: $finish    : D:/FPGA/Modelsim/win64/../verilog_src/uvm-1.2/src/base/uvm_root.svh(517)
+#    Time: 560 ns  Iteration: 68  Instance: /tb_axi4_timeout_uvm
+# End time: 11:46:34 on Oct 02,2026, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 0
+===== axi_timeout_boundary_test =====
+Reading pref.tcl
+
+# 2020.4
+
+# vsim -c -L uvm work.tb_axi4_timeout_uvm "+UVM_TESTNAME=axi_timeout_boundary_test" -do "run -all; quit -code 0" 
+# Start time: 11:46:35 on Oct 02,2026
+# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_45604\win64_gcc-13.1.0\export_tramp.dll
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# //  ModelSim SE-64 2020.4 Oct 13 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.axi_timeout_if(fast)
+# Loading uvm.uvm_pkg(fast)
+# Loading work.axi_timeout_pkg(fast)
+# Loading uvm.questa_uvm_pkg(fast)
+# Loading work.tb_axi4_timeout_uvm(fast)
+# Compiling C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_45604\win64_gcc-13.1.0\exportwrapper.c
+# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_45604\win64_gcc-13.1.0\vsim_auto_compile.dll
+# Loading D:/FPGA/Modelsim/uvm-1.2\win64\uvm_dpi.dll
+# run -all
+# UVM_INFO verilog_src/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
+# ----------------------------------------------------------------
+# UVM-1.2
+# (C) 2007-2014 Mentor Graphics Corporation
+# (C) 2007-2014 Cadence Design Systems, Inc.
+# (C) 2006-2014 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# (C) 2013-2014 NVIDIA Corporation
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test axi_timeout_boundary_test...
+# UVM_INFO verilog_src/uvm-1.2/src/base/uvm_objection.svh(1270) @ 360000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm/axi_timeout_scoreboard.sv(45) @ 360000: uvm_test_top.env.sb [M4_PASS] scoreboard checked 36 cycles
+# UVM_INFO verilog_src/uvm-1.2/src/base/uvm_report_server.svh(847) @ 360000: reporter [UVM/REPORT/SERVER] 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    6
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [M4_PASS]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVM/RELNOTES]     1
+# 
+# ** Note: $finish    : D:/FPGA/Modelsim/win64/../verilog_src/uvm-1.2/src/base/uvm_root.svh(517)
+#    Time: 360 ns  Iteration: 68  Instance: /tb_axi4_timeout_uvm
+# End time: 11:46:37 on Oct 02,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+===== axi_timeout_recovery_test =====
+Reading pref.tcl
+
+# 2020.4
+
+# vsim -c -L uvm work.tb_axi4_timeout_uvm "+UVM_TESTNAME=axi_timeout_recovery_test" -do "run -all; quit -code 0" 
+# Start time: 11:46:38 on Oct 02,2026
+# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_58548\win64_gcc-13.1.0\export_tramp.dll
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# //  ModelSim SE-64 2020.4 Oct 13 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.axi_timeout_if(fast)
+# Loading uvm.uvm_pkg(fast)
+# Loading work.axi_timeout_pkg(fast)
+# Loading uvm.questa_uvm_pkg(fast)
+# Loading work.tb_axi4_timeout_uvm(fast)
+# Compiling C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_58548\win64_gcc-13.1.0\exportwrapper.c
+# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_58548\win64_gcc-13.1.0\vsim_auto_compile.dll
+# Loading D:/FPGA/Modelsim/uvm-1.2\win64\uvm_dpi.dll
+# run -all
+# UVM_INFO verilog_src/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
+# ----------------------------------------------------------------
+# UVM-1.2
+# (C) 2007-2014 Mentor Graphics Corporation
+# (C) 2007-2014 Cadence Design Systems, Inc.
+# (C) 2006-2014 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# (C) 2013-2014 NVIDIA Corporation
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test axi_timeout_recovery_test...
+# UVM_INFO verilog_src/uvm-1.2/src/base/uvm_objection.svh(1270) @ 260000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm/axi_timeout_scoreboard.sv(45) @ 260000: uvm_test_top.env.sb [M4_PASS] scoreboard checked 26 cycles
+# UVM_INFO verilog_src/uvm-1.2/src/base/uvm_report_server.svh(847) @ 260000: reporter [UVM/REPORT/SERVER] 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    6
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [M4_PASS]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVM/RELNOTES]     1
+# 
+# ** Note: $finish    : D:/FPGA/Modelsim/win64/../verilog_src/uvm-1.2/src/base/uvm_root.svh(517)
+#    Time: 260 ns  Iteration: 68  Instance: /tb_axi4_timeout_uvm
+# End time: 11:46:39 on Oct 02,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+===== axi_timeout_parallel_reset_test =====
+Reading pref.tcl
+
+# 2020.4
+
+# vsim -c -L uvm work.tb_axi4_timeout_uvm "+UVM_TESTNAME=axi_timeout_parallel_reset_test" -do "run -all; quit -code 0" 
+# Start time: 11:46:41 on Oct 02,2026
+# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_54980\win64_gcc-13.1.0\export_tramp.dll
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# //  ModelSim SE-64 2020.4 Oct 13 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.axi_timeout_if(fast)
+# Loading uvm.uvm_pkg(fast)
+# Loading work.axi_timeout_pkg(fast)
+# Loading uvm.questa_uvm_pkg(fast)
+# Loading work.tb_axi4_timeout_uvm(fast)
+# Compiling C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_54980\win64_gcc-13.1.0\exportwrapper.c
+# Loading C:/Users/bboy/AppData/Local/Temp\bboy@DESKTOP-MMGBMBO_dpi_54980\win64_gcc-13.1.0\vsim_auto_compile.dll
+# Loading D:/FPGA/Modelsim/uvm-1.2\win64\uvm_dpi.dll
+# run -all
+# UVM_INFO verilog_src/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
+# ----------------------------------------------------------------
+# UVM-1.2
+# (C) 2007-2014 Mentor Graphics Corporation
+# (C) 2007-2014 Cadence Design Systems, Inc.
+# (C) 2006-2014 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# (C) 2013-2014 NVIDIA Corporation
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test axi_timeout_parallel_reset_test...
+# UVM_INFO verilog_src/uvm-1.2/src/base/uvm_objection.svh(1270) @ 190000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO D:\GIT\MyPrj\axi4-full-timeout-checker\tb\uvm/axi_timeout_scoreboard.sv(45) @ 190000: uvm_test_top.env.sb [M4_PASS] scoreboard checked 19 cycles
+# UVM_INFO verilog_src/uvm-1.2/src/base/uvm_report_server.svh(847) @ 190000: reporter [UVM/REPORT/SERVER] 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    6
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [M4_PASS]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVM/RELNOTES]     1
+# 
+# ** Note: $finish    : D:/FPGA/Modelsim/win64/../verilog_src/uvm-1.2/src/base/uvm_root.svh(517)
+#    Time: 190 ns  Iteration: 68  Instance: /tb_axi4_timeout_uvm
+# End time: 11:46:42 on Oct 02,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+[PASS] M4 UVM regression completed successfully.
