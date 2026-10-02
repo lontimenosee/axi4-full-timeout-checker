@@ -72,3 +72,25 @@ axi4-full-timeout-checker/
 ├── logs/           关键工具运行日志
 ├── reports/        覆盖率、综合、时序等报告
 └── ip_repo/        Vivado 封装后的 IP
+```
+
+## Vivado IP 一键打包与验证
+
+在仓库根目录使用 PowerShell 运行：
+
+```powershell
+.\scripts\ip\run_m8_ip.ps1
+```
+
+脚本会从正式 RTL 重新生成 IP、执行完整性检查，然后在干净工程中加入 IP Catalog，将 `TIMEOUT_CYCLES` 改为 7 并完成 OOC 综合和 DCP 检查。IP 的 VLNV 是 `user.org:user:axi4_timeout_checker:1.0`。
+
+默认使用 `D:\FPGA\Vivado\Vivado\2020.2\bin\vivado.bat`。其他安装位置可以通过环境变量覆盖：
+
+```powershell
+$env:VIVADO_BIN = 'D:\your_path\Vivado\bin\vivado.bat'
+.\scripts\ip\run_m8_ip.ps1
+```
+
+最终 IP 位于 `ip_repo/axi4_timeout_checker_1.0/`，日志位于 `logs/ip/`。脚本产生的消费端工程位于 `work/`，已由 `.gitignore` 排除。
+
+IP 包不携带全局 `create_clock` 约束，避免与集成工程的顶层时钟约束冲突。`constraints/axi4_timeout_checker.xdc` 仅用于本项目的独立综合与时序检查。

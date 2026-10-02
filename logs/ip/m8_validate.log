@@ -1,0 +1,284 @@
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source {D:\GIT\MyPrj\axi4-full-timeout-checker\scripts\ip\validate_ip.tcl}
+# set script_dir [file dirname [file normalize [info script]]]
+# set repo_root  [file normalize [file join $script_dir ../..]]
+# set ip_repo    [file join $repo_root ip_repo]
+# set work_dir   [file join $repo_root work ip_consumer_test]
+# set part       [expr {[info exists ::env(FPGA_PART)] ? $::env(FPGA_PART) : "xc7a35tcpg236-1"}]
+# set expected_vlnv user.org:user:axi4_timeout_checker:1.0
+# file delete -force $work_dir
+# file mkdir $work_dir
+# create_project ip_consumer_test $work_dir -part $part -force
+# set_property ip_repo_paths [list $ip_repo] [current_project]
+# update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/GIT/MyPrj/axi4-full-timeout-checker/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/FPGA/Vivado/Vivado/2020.2/data/ip'.
+# if {[llength [get_ipdefs -all $expected_vlnv]] != 1} {
+#     error "Packaged IP not found in catalog: $expected_vlnv"
+# }
+# create_ip -vlnv $expected_vlnv -module_name dut_timeout_checker
+# set_property -dict [list CONFIG.TIMEOUT_CYCLES {7}] [get_ips dut_timeout_checker]
+# if {[get_property CONFIG.TIMEOUT_CYCLES [get_ips dut_timeout_checker]] ne "7"} {
+#     error "TIMEOUT_CYCLES customization did not take effect"
+# }
+# generate_target all [get_ips dut_timeout_checker]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'dut_timeout_checker'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'dut_timeout_checker'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'dut_timeout_checker'...
+# create_ip_run [get_ips dut_timeout_checker]
+# set ip_run [get_runs dut_timeout_checker_synth_1]
+# launch_runs $ip_run -jobs 1
+
+[Fri Oct  2 23:19:27 2026] Launched dut_timeout_checker_synth_1...
+Run output will be captured here: D:/GIT/MyPrj/axi4-full-timeout-checker/work/ip_consumer_test/ip_consumer_test.runs/dut_timeout_checker_synth_1/runme.log
+# wait_on_run $ip_run
+[Fri Oct  2 23:19:27 2026] Waiting for dut_timeout_checker_synth_1 to finish...
+
+*** Running vivado
+    with args -log dut_timeout_checker.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source dut_timeout_checker.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source dut_timeout_checker.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/GIT/MyPrj/axi4-full-timeout-checker/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/FPGA/Vivado/Vivado/2020.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is d:/GIT/MyPrj/axi4-full-timeout-checker/work/ip_consumer_test/ip_consumer_test.cache/ip 
+Command: synth_design -top dut_timeout_checker -part xc7a35tcpg236-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 39668
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1141.750 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'dut_timeout_checker' [d:/GIT/MyPrj/axi4-full-timeout-checker/work/ip_consumer_test/ip_consumer_test.gen/sources_1/ip/dut_timeout_checker/synth/dut_timeout_checker.v:57]
+INFO: [Synth 8-6157] synthesizing module 'axi4_timeout_checker' [d:/GIT/MyPrj/axi4-full-timeout-checker/work/ip_consumer_test/ip_consumer_test.gen/sources_1/ip/dut_timeout_checker/src/axi4_timeout_checker.v:3]
+	Parameter TIMEOUT_CYCLES bound to: 7 - type: integer 
+	Parameter TIMEOUT_CNT_WIDTH bound to: 3 - type: integer 
+	Parameter TIMEOUT_LIMIT bound to: 3'b110 
+	Parameter WR_IDLE bound to: 2'b00 
+	Parameter WR_WAIT_W bound to: 2'b01 
+	Parameter WR_WAIT_B bound to: 2'b10 
+	Parameter RD_IDLE bound to: 1'b0 
+	Parameter RD_WAIT_R bound to: 1'b1 
+INFO: [Synth 8-226] default block is never used [d:/GIT/MyPrj/axi4-full-timeout-checker/work/ip_consumer_test/ip_consumer_test.gen/sources_1/ip/dut_timeout_checker/src/axi4_timeout_checker.v:167]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_timeout_checker' (1#1) [d:/GIT/MyPrj/axi4-full-timeout-checker/work/ip_consumer_test/ip_consumer_test.gen/sources_1/ip/dut_timeout_checker/src/axi4_timeout_checker.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'dut_timeout_checker' (2#1) [d:/GIT/MyPrj/axi4-full-timeout-checker/work/ip_consumer_test/ip_consumer_test.gen/sources_1/ip/dut_timeout_checker/synth/dut_timeout_checker.v:57]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1141.750 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1141.750 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1141.750 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-802] inferred FSM for state register 'write_state_reg' in module 'axi4_timeout_checker'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 WR_IDLE |                               00 |                               00
+               WR_WAIT_W |                               01 |                               01
+               WR_WAIT_B |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'write_state_reg' using encoding 'sequential' in module 'axi4_timeout_checker'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1141.750 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    3 Bit       Adders := 5     
++---Registers : 
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 5     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   3 Input    5 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 9     
+	   3 Input    3 Bit        Muxes := 3     
+	   3 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 47    
+	   3 Input    1 Bit        Muxes := 11    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1141.750 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1141.750 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1141.750 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1141.750 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1141.750 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1141.750 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1141.750 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1141.750 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1141.750 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     1|
+|2     |LUT2 |     2|
+|3     |LUT3 |     8|
+|4     |LUT4 |     8|
+|5     |LUT5 |    16|
+|6     |LUT6 |    16|
+|7     |FDCE |    29|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+---------------------+------+
+|      |Instance |Module               |Cells |
++------+---------+---------------------+------+
+|1     |top      |                     |    80|
+|2     |  inst   |axi4_timeout_checker |    80|
++------+---------+---------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1141.750 ; gain = 0.000
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1141.750 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1141.750 ; gain = 0.000
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1141.750 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1197.641 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+20 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1197.641 ; gain = 55.891
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Common 17-1381] The checkpoint 'D:/GIT/MyPrj/axi4-full-timeout-checker/work/ip_consumer_test/ip_consumer_test.runs/dut_timeout_checker_synth_1/dut_timeout_checker.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP dut_timeout_checker, cache-ID = baddd0e52ac9cdb7
+INFO: [Common 17-1381] The checkpoint 'D:/GIT/MyPrj/axi4-full-timeout-checker/work/ip_consumer_test/ip_consumer_test.runs/dut_timeout_checker_synth_1/dut_timeout_checker.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file dut_timeout_checker_utilization_synth.rpt -pb dut_timeout_checker_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Oct  2 23:19:49 2026...
+[Fri Oct  2 23:19:52 2026] dut_timeout_checker_synth_1 finished
+wait_on_run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:25 . Memory (MB): peak = 1140.895 ; gain = 0.000
+# set run_status [get_property STATUS $ip_run]
+# set dcp_file [get_property DIRECTORY $ip_run]/dut_timeout_checker.dcp
+# if {![string match "synth_design Complete*" $run_status]} {
+#     error "IP synthesis did not complete: $run_status"
+# }
+# if {![file exists $dcp_file]} {
+#     error "IP synthesis checkpoint was not generated: $dcp_file"
+# }
+# puts "M8_VALIDATE_VLNV=$expected_vlnv"
+M8_VALIDATE_VLNV=user.org:user:axi4_timeout_checker:1.0
+# puts "M8_VALIDATE_TIMEOUT_CYCLES=[get_property CONFIG.TIMEOUT_CYCLES [get_ips dut_timeout_checker]]"
+M8_VALIDATE_TIMEOUT_CYCLES=7
+# puts "M8_VALIDATE_RUN_STATUS=$run_status"
+M8_VALIDATE_RUN_STATUS=synth_design Complete!
+# puts "M8_VALIDATE_DCP=$dcp_file"
+M8_VALIDATE_DCP=D:/GIT/MyPrj/axi4-full-timeout-checker/work/ip_consumer_test/ip_consumer_test.runs/dut_timeout_checker_synth_1/dut_timeout_checker.dcp
+# puts "M8_VALIDATE_PASS"
+M8_VALIDATE_PASS
+# close_project
+INFO: [Common 17-206] Exiting Vivado at Fri Oct  2 23:19:52 2026...

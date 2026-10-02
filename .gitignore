@@ -1,5 +1,21 @@
-# Vivado
+# Vivado generated projects and local state
 prj/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.xpr
+*.jou
+*.str
+*.pb
+.Xil/
+vivado*.log
+vivado*.jou
+
+# Vivado's temporary project created while editing a packaged IP
+**/tmp_edit_project*/
+**/tmp_edit_project*.xpr
 
 docs/superpowers
 
@@ -9,8 +25,6 @@ transcript
 vsim.wlf
 *.vcd
 *.fst
-
-
 
 # Editor
 .vscode/
