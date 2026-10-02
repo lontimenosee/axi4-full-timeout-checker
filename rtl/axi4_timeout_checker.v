@@ -36,7 +36,9 @@ module axi4_timeout_checker #(
 
     localparam integer TIMEOUT_CNT_WIDTH =
         (TIMEOUT_CYCLES <= 1) ? 1 : clog2(TIMEOUT_CYCLES);
-    localparam [TIMEOUT_CNT_WIDTH-1:0] TIMEOUT_LIMIT = TIMEOUT_CYCLES - 1;
+    localparam [TIMEOUT_CNT_WIDTH-1:0] TIMEOUT_LIMIT =
+        TIMEOUT_CYCLES[TIMEOUT_CNT_WIDTH-1:0] -
+        {{(TIMEOUT_CNT_WIDTH-1){1'b0}}, 1'b1};
 
     localparam [1:0] WR_IDLE   = 2'd0;
     localparam [1:0] WR_WAIT_W = 2'd1;
